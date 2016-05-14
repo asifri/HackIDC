@@ -1,0 +1,74 @@
+
+#loc{
+	color: green; 
+	display:none;
+	margin: 10px;
+}
+
+#loc2{
+	color: green; 
+	display:none;
+	margin: 10px;
+}
+.btn-default{
+
+	margin: 30px;
+}
+
+#test{
+	font-size: 30px; 
+	
+}
+td{
+	color: black;
+}
+#sec02address{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#googleMap{
+
+	width:100%;
+	height:380px;
+}
+
+.row h2{
+	text-align: center;
+}
+ #floating-panel {
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        text-align: center;
+      }
+
+#poiContainer input{
+	cursor: pointer;
+}
+#pic img {
+	width: 40%;
+	height: 40%;
+}
+
+#sec01alert{
+	display: none;
+}
+#sec01alert02{
+	display: none;
+}
+#googleMap{
+	margin-bottom: 12px;
+}
+
+#step4 h4{
+	text-align: center;
+}
+thead *{
+	font-weight: bold;
+}
+#poiImg{
+	transform: scale(2,2);
+	transform-origin: 0 0;
+	left: -80px;
+	position: relative;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TouRun</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/new.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="static/css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC-0b1epnRfzvSdf4rbUmhZ482pmrW8RDs 
+"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >Start Bootstrap</a>
+            </li>
+            <li>
+                <a href="#top" onclick = $("#menu-close").click(); >HOME </a>
+            </li>
+            <li>
+                <a href="#step1" onclick = $("#menu-close").click(); >STEP 1</a>
+            </li>
+            <li>
+                <a href="#step2" onclick = $("#menu-close").click(); >STEP 2</a>
+            </li>
+            <li>
+                <a href="#step3" onclick = $("#menu-close").click(); >STEP 3</a>
+            </li>
+            <li>
+                <a href="#step4" onclick = $("#menu-close").click(); >Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>TouRun</h1>
+            <h3>Discover your city, through running</h3>
+            <br>
+            <a id = "getStarted" href="#step1" class="btn btn-success btn-lg">Get Started</a>
+        </div>
+    </header>
+
+    <section id="step1">
+        <div class="container">
+            <div class="row">
+                <div id = "s1btns" class="col-lg-12 text-center">
+                    <h1>STEP 1</h1>
+                    <hr class="small">
+                    <p class="lead">Choose location</p>
+                    <button id = "sec01but01" class="btn btn-default btn-info">My location</button>
+                    <button id = "sec01but02" class="btn btn-default">Other location</button>
+                    <div class="row">
+                        <div id="mapholder"></div>
+                    </div>
+                    <div class="row">
+                        <p id = "error"></p>   
+                        <span id="loc" class="glyphicon glyphicon-ok"></span>
+                    </div>
+                </div>
+            </div>
+            <div class ="row">
+                <div id = "sec01alert" class="alert alert-success fade in">
+                     <a id = "sec01alertclose" href="#step1" class="close" aria-label="close">&times;</a>
+                        <strong>SUCCESS!</strong> location found.
+                </div>
+                <div id = "sec01alert02" class="alert alert-danger fade in">
+                     <a id = "sec01alertclose2" href="#step1" class="close" aria-label="close">&times;</a>
+                        <strong>OOPS!</strong> location not found, please try again.
+                </div>
+            </div>   
+            <div id = "sec02address" class="row">
+                <h2>Enter an address</h2>
+                 <div id="floating-panel">
+                     <input id="address" type="textbox" value="">
+                     <input id="submit" type="button" value="GO!">
+                 </div>
+            </div>    
+            <div id="googleMap"></div>
+        </div>
+    </section>
+
+    <section id="step2" class="bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>STEP 2</h2>
+                    <hr class="small">
+                    <p class="lead">Select distance range of route </p>
+                     <div id = "chooseLength">
+                         <b>1km</b> <input id="trackLength" type="text" data-slider-min="1" data-slider-max="20" data-slider-value="[3,6]"/> <b>20km</b>
+                     </div>
+                     <div id = "sl2"></div>
+                     <button id = "sec02but01" class="btn btn-default">Select</button>
+                    <div class="row">
+                        <span id="loc2" class="glyphicon glyphicon-ok"></span>
+                        <p id="test"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="step3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+
+                    <h1>STEP 3</h1>
+                    <p class="lead">Choose points of interest</p>                    
+                    <div id = "poiContainer" class="row">
+                        <div class = "col-xs-6"><table class = "table table-hover">
+                            <thead id = "photosThead">
+                            <tr>
+                                <td>CB</td>
+                                <td>Attraction</td>
+                                <td>Rating</td>
+                            </tr>
+                            </thead>
+                        </table></div>
+
+                        <div class="col-xs-6 text-center" id="pic">
+                            <center><img id = "poiImg"></center>
+                        </div>
+                    </div>
+                    <button id = "sec03but01" class="btn btn-lg btn-default">DONE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="step4" class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>RESULTS:</h3>
+                </div>
+                <div id = "routesContainer" class="row">
+                        <div class = "col-xs-6"><table class = "table table-hover">
+                            <thead>
+                            <tr>
+                                <td>CB</td>
+                                <td>Attractions</td>
+                                <td>length</td>
+                            </tr>
+                            </thead>
+                        </table></div>
+                        <h4>Route</h4>
+                        <div class="col-xs-6" id="pic">
+                            <iframe id = "googleMapResult"
+                                width="600"
+                                height="450"
+                                frameborder="0" style="border:0"
+                                src="" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>TouRun</strong>
+                    </h4>
+                    <p>hackIDC 2016</p>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">&copy; Ofir Barak Asaf Guy Arik 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+ 
+    <!-- jQuery -->
+    <script src="static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="static/js/bootstrap.min.js"></script>
+   <script src="static/js/newjs.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+    <link rel = "stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.2/css/bootstrap-slider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.2/bootstrap-slider.min.js"></script>
+    
+</body>
+
+</html>
